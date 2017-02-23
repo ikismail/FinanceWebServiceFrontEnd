@@ -18,7 +18,7 @@
 <style>
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
 .row.content {
-	height: 1500px
+	height: 542px
 }
 
 /* Set gray background color and 100% height */
@@ -44,14 +44,20 @@ footer {
 		height: auto;
 	}
 }
+
+@media ( min-width : 768px) {
+	.row {
+		margin-right: 0;
+	}
+}
 </style>
 </head>
-<body data-ng-app="myApp">
+<body data-ng-app="myApp" data-ng-controller="angularController">
 
 	<div class="container-fluid">
 		<div class="row content">
 			<div class="col-sm-3 sidenav">
-				<h4>John's Blog</h4>
+				<h4>Finance Service</h4>
 				<ul class="nav nav-pills nav-stacked">
 					<li class="active"><a href="#/apr">APR</a></li>
 					<li><a href="#/leastMonthlyPayment">Least Monthly Payment</a></li>
