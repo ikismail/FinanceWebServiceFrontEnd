@@ -57,6 +57,10 @@ app.controller('angularController', function($scope, angularService, $http,
 	
 	$scope.submitLeastMP = function() {
 		$scope.calculateLeastMP($scope.leastMP);
+	};
+	
+	$scope.resetLeastMP = function(){
+		$scope.leastMP = {};
 	}
 
 	// Loan Monthly Payment
@@ -81,6 +85,10 @@ app.controller('angularController', function($scope, angularService, $http,
 	$scope.submitLoanMP = function() {
 		$scope.calculateLoanMP($scope.loanMP);
 	};
+	
+	$scope.resetLoanMP = function(){
+		$scope.loanMP = {};
+	}
 
 	// Loan Number of Payment
 	$scope.loanNumP = {
@@ -101,8 +109,12 @@ app.controller('angularController', function($scope, angularService, $http,
 		})
 	};
 	
-	$scope.submitloanNumP = function() {
+	$scope.submitLoanNumP = function() {
 		$scope.calculateLoanNumP($scope.loanNumP);
 	};
+	
+	$scope.resetLoanNumP = function(){
+		$scope.loanNumP = {};
+	}
 
 })

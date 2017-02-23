@@ -1,71 +1,73 @@
 <!-- Created by ikism on Feb 23, 2017 -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-</head>
-<body>
+
 <div class="col-sm-9">
-		<div class="container" style="margin-bottom: 19px">
-			<h1 class="well">Least Monthly Payment</h1>
-			<div class="col-lg-12 well">
-				<div class="row">
+	<div class="container" style="margin-bottom: 19px">
+		<h1 class="well">Least Monthly Payment</h1>
+		<div class="col-lg-12 well">
+			<div class="row">
 
-					<!--  RegisterServlet  form -->
-					<form data-ng-submit="submitApr()" name="myForm" novalidate>
-						<div class="col-sm-12">
-							<div class="row">
+				<!--  RegisterServlet  form -->
+				<form data-ng-submit="submitLeastMP()" name="myForm">
+					<div class="col-sm-12">
+						<div class="row">
 
-								<div class="col-sm-6 form-group">
-									<label>Loan Amount</label> <input type="text"
-										data-ng-model="apr.loanAmount" placeholder="Loan Amount"
-										class="form-control" required> {{apr.loanAmount}}
-								</div>
-
-								<div class="col-sm-6 form-group">
-									<label>Extra Cost</label> <input type="text"
-										data-ng-model="apr.extraCost" placeholder="Extra Cost"
-										class="form-control">
-								</div>
-
+							<div class="col-sm-6 form-group">
+								<label>Loan Amount</label> <input type="text"
+									data-ng-model="leastMP.loanAmount"
+									pattern="(?=\.\d|\d)(?:\d+)?(?:\.?\d*)"
+									title=" 200 or 200.12 or 25.400 etc." placeholder="Loan Amount"
+									class="form-control" required>
 							</div>
-							<div class="row">
 
-								<div class="col-sm-6 form-group">
-									<label>Interest Rate</label> <input type="text"
-										data-ng-model="apr.interestRate" placeholder="Interest Rate"
-										class="form-control" required>
-								</div>
-
-								<div class="col-sm-6 form-group">
-									<label>Months</label> <input type="text"
-										data-ng-model="apr.months" placeholder="No. of Months"
-										class="form-control" required>
-
-								</div>
+							<div class="col-sm-6 form-group">
+								<label>Residual Value</label> <input type="text"
+									data-ng-model="leastMP.residualValue"
+									pattern="(?=\.\d|\d)(?:\d+)?(?:\.?\d*)"
+									title=" 200 or 200.12 or 25.400 etc."
+									placeholder="Residual Value" class="form-control">
 							</div>
-							<div class="row" data-ng-show="apr.value">
-								<div class="col-sm-6 form group">
-									<label>Result</label> <input type="text"
-										data-ng-model="apr.value" class="form-control" required>
-								</div>
+
+						</div>
+						<div class="row">
+
+							<div class="col-sm-6 form-group">
+								<label>Interest Rate</label> <input type="text"
+									data-ng-model="leastMP.interestRate"
+									pattern="(?=\.\d|\d)(?:\d+)?(?:\.?\d*)"
+									title=" 200 or 200.12 or 25.400 etc."
+									placeholder="Interest Rate" class="form-control" required>
 							</div>
-							<div>
-								<div class="form-actions" style="text-align: center;">
 
-									<button type="submit" class="btn btn-primary btn-info"
-										style="text-align: center;">Submit</button>
-									<button type="button" class="btn btn-warning btn-info"
-										style="text-align: center;" data-ng-click="resetApr()">Reset
-									</button>
+							<div class="col-sm-6 form-group">
+								<label>Months</label> <input type="text"
+									data-ng-model="leastMP.months" placeholder="No. of Months"
+									pattern="(?=\.\d|\d)(?:\d+)?(?:\.?\d*)"
+									title=" 200 or 200.12 or 25.400 etc." class="form-control"
+									required>
 
-								</div>
 							</div>
 						</div>
-					</form>
-				</div>
+						<div class="row" data-ng-show="leastMP.value">
+							<div class="col-sm-6 form group">
+								<label>Result</label> <input type="text"
+									data-ng-model="leastMP.value" class="form-control">
+							</div>
+						</div>
+						<br>
+						<div>
+							<div class="form-actions" style="text-align: center;">
+
+								<button type="submit" class="btn btn-primary btn-info"
+									style="text-align: center; margin-right: 24px">Submit</button>
+								<button type="button" class="btn btn-warning "
+									style="text-align: center;" data-ng-click="resetLeastMP()">Reset
+								</button>
+
+							</div>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+</div>
